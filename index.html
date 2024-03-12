@@ -110,7 +110,7 @@
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
- unityInstance.SendMessage("Bridge", "ReceiveMessageFromPage", "qweqwe");
+ unityInstance.SendMessage("Bridge", "ReceiveMessageFromPage", JSON.stringify(Object.fromEntries(new URLSearchParams(window.location.search).entries())));
               }).catch((message) => {
                 alert(message);
               });
